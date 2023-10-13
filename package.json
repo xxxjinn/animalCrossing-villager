@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.10.0"
+    "parcel": "^2.10.0",
+    "parcel-reporter-static-files-copy": "^1.5.3"
   }
 }
