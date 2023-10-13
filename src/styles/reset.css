@@ -7,6 +7,9 @@ body {
   line-height: 1;
 
   background-image: url("../../static/images/backgroundImage.jpg");
+
+  display: flex;
+  flex-direction: column;
 }
 ol,
 ul {
