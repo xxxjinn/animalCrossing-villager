@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+:root {
+  --darkest-green: #3f5d4d;
+  --middle-green: #547a66;
+  --bright-green: #71b38f;
+}
