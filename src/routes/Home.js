@@ -6,7 +6,7 @@ export default class Home extends Component {
     <main class="main">
       <div class="main-wrap">
         <div class="main-top">
-          <h1 class="main-top-text">주민 관리</h1>
+          <h1 class="main-top-text">주민 목록🦝</h1>
           <a href="#/add">
             <button class="add-button">새로운 주민 등록하기</button></a
           >
