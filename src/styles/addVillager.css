@@ -128,9 +128,9 @@
 }
 
 .add-btn {
-  width: 80%;
+  width: 100%;
   max-width: 10rem;
-  height: 3.5rem;
+  height: 4rem;
 
   border-radius: 1rem;
   border-style: none;
@@ -161,7 +161,7 @@
   }
 
   .profile-top-text {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
   }
 
   .profile-main {
@@ -195,7 +195,6 @@
 
   .add-btn {
     max-width: 8rem;
-    height: 3rem;
 
     bottom: 1rem;
 
