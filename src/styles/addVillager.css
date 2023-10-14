@@ -1,6 +1,6 @@
 .profile-wrap {
-  width: 65%;
-  height: 40rem;
+  width: 70%;
+  height: 42rem;
 
   background-color: rgba(252, 241, 224, 0.8);
 
@@ -62,7 +62,7 @@
 
   margin: 0 5% 1%;
 
-  width: 40%;
+  width: 100%;
   min-width: 16rem;
 }
 
@@ -128,9 +128,9 @@
 }
 
 .add-btn {
-  width: 100%;
+  width: 27%;
   max-width: 10rem;
-  height: 4rem;
+  height: 9%;
 
   border-radius: 1rem;
   border-style: none;
@@ -175,8 +175,7 @@
   }
 
   .profile-right {
-    width: 100%;
-    min-width: 25rem;
+    width: 80%;
   }
 
   .villager-img {
@@ -195,6 +194,7 @@
 
   .add-btn {
     max-width: 8rem;
+    height: 3rem;
 
     bottom: 1rem;
 
