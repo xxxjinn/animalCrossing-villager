@@ -109,7 +109,7 @@
   width: 100%;
   height: 20%;
 
-  margin: 0 auto;
+  margin: 3rem auto;
 
   border-radius: 3rem;
   border-style: none;
@@ -122,6 +122,9 @@
 
   transition: background-color 0.4s, transform 1.9s;
   transform-origin: center;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .villager:hover {
@@ -156,8 +159,6 @@
 
   font-size: 1.4rem;
   font-weight: 600;
-
-  margin-top: 3rem;
 }
 
 .delete-button {
@@ -235,7 +236,7 @@
   .villager {
     height: 15%;
 
-    margin: 0.5rem auto;
+    margin: 3rem auto;
   }
 
   .villager .villager-info-ul {
