@@ -6,6 +6,8 @@ export class Component {
     this.state = state;
     this.props = props;
     this.render();
+    this.componentDidMount();
   }
   render() {}
+  componentDidMount() {}
 }
