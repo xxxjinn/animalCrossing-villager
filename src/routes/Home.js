@@ -16,7 +16,7 @@ export default class Home extends Component {
       const villagerHTML = /* html */ ` 
         <div class="villager">
           <ul class="villager-info-ul">
-            <li class="villager-info-li">
+            <li class="villager-info-li-img">
               <img class="villager-img" src="${imageUrl}" />
             </li>
             <li class="villager-info-li"><p>${name}</p></li>
@@ -32,6 +32,17 @@ export default class Home extends Component {
       `;
 
       villagersList.insertAdjacentHTML("beforeend", villagerHTML);
+      const sexElement = villagersList.querySelector(
+        ".villager:last-child .sex"
+      );
+
+      const colorPalette = {
+        sex: {
+          남성: "#A8CAD5",
+          여성: "#D5A8B8",
+        },
+      };
+      sexElement.style.color = colorPalette.sex[sex];
     });
   }
 
