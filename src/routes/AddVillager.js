@@ -10,35 +10,35 @@ export default class AddVillager extends Component {
       <main class="profile-main">
         <div class="profile-left"> 
           <label for="fileInput" class="custom-file-button"><img
-            class="villager-img"
-            id="villager-img"
+            class="profile-img"
+            id="profile-img"
             src="./assets/graphics/previewVillager.png"
           /></label>
           <input type="file" id="fileInput" class="chooseImg" accept="image/*">
         </div>
         <div class="profile-right">
           <ul class="profile-ul">
-            <ul class="villager-info">
-              <li><p class="villager-info-li">이름:</p></li>
-              <li><p class="villager-info-li">영어 이름:</p></li>
-              <li><p class="villager-info-li">성별:</p></li>
-              <li><p class="villager-info-li">생일:</p></li>
-              <li><p class="villager-info-li">성격:</p></li>
-              <li><p class="villager-info-li">좋아하는 색:</p></li>
-              <li><p class="villager-info-li">말버릇:</p></li>
+            <ul class="profile-info">
+              <li><p class="profile-info-li">이름:</p></li>
+              <li><p class="profile-info-li">영어 이름:</p></li>
+              <li><p class="profile-info-li">성별:</p></li>
+              <li><p class="profile-info-li">생일:</p></li>
+              <li><p class="profile-info-li">성격:</p></li>
+              <li><p class="profile-info-li">좋아하는 색:</p></li>
+              <li><p class="profile-info-li">말버릇:</p></li>
             </ul>
-            <ul class="villager-info-input-ul">
-              <li class="villager-info-input-li"><input type="text" class="villager-info-name villager-info-input"></input></li>
-              <li class="villager-info-input-li"><input type="text" class="villager-info-engName villager-info-input"></input></li>
-              <li class="villager-info-input-li">
-                <select class="villager-info-sex">
+            <ul class="profile-info-input-ul">
+              <li class="profile-info-input-li"><input type="text" class="profile-info-name profile-info-input"></input></li>
+              <li class="profile-info-input-li"><input type="text" class="profile-info-engName profile-info-input"></input></li>
+              <li class="profile-info-input-li">
+                <select class="profile-info-sex">
                   <option value="여성">여성</option>
                   <option value="남성">남성</option>
                 </select></li>
-              <li class="villager-info-input-li"><input type="text" placeholder="예) 3월19일" class="villager-info-birthday villager-info-input"></input></li>
-              <li class="villager-info-input-li"><input type="text" class="villager-info-personality villager-info-input"></input></li>
-              <li class="villager-info-input-li"><input type="text" class="villager-info-favoriteColor villager-info-input"></input></li>
-              <li class="villager-info-input-li"><input type="text" class="villager-info-speechHabit villager-info-input"></input></li>
+              <li class="profile-info-input-li"><input type="text" placeholder="예) 3월19일" class="profile-info-birthday profile-info-input"></input></li>
+              <li class="profile-info-input-li"><input type="text" class="profile-info-personality profile-info-input"></input></li>
+              <li class="profile-info-input-li"><input type="text" class="profile-info-favoriteColor profile-info-input"></input></li>
+              <li class="profile-info-input-li"><input type="text" class="profile-info-speechHabit profile-info-input"></input></li>
               
             </ul>
           </ul>

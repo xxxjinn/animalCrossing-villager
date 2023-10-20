@@ -72,8 +72,8 @@
   margin-top: 2rem;
 }
 
-.villager-info,
-.villager-info-input-ul {
+.profile-info,
+.profile-info-input-ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -83,7 +83,7 @@
   margin: 1%;
 }
 
-.villager-info-li {
+.profile-info-li {
   margin: 1rem;
   margin-right: 2rem;
 
@@ -91,19 +91,19 @@
   font-weight: 800;
 }
 
-.villager-info-input-li {
+.profile-info-input-li {
   margin: 0.6rem;
 
   width: 100%;
 }
 
-.villager-info-li,
-.villager-info-input-li {
+.profile-info-li,
+.profile-info-input-li {
   white-space: nowrap;
 }
 
-.villager-info-input,
-.villager-info-sex {
+.profile-info-input,
+.profile-info-sex {
   width: 100%;
   height: 1.9rem;
 
@@ -115,11 +115,11 @@
   font-size: 1rem;
 }
 
-.villager-info-sex:focus {
+.profile-info-sex:focus {
   outline: none;
 }
 
-.villager-info-input:focus {
+.profile-info-input:focus {
   outline: none;
 
   border-bottom: solid 3.5px var(--middle-green);
@@ -178,11 +178,11 @@
     width: 80%;
   }
 
-  .villager-img {
+  .profile-img {
     width: 14rem;
   }
 
-  .villager-info-li {
+  .profile-info-li {
     margin: 1.1rem;
     margin-right: 2rem;
 
