@@ -12,7 +12,7 @@ export default class AddVillager extends Component {
           <label for="fileInput" class="custom-file-button"><img
             class="profile-img"
             id="profile-img"
-            src="./assets/graphics/previewVillager.png"
+            src="/images/previewVillager.png"
           /></label>
           <input type="file" id="fileInput" class="chooseImg" accept="image/*">
         </div>
