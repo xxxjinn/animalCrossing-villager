@@ -1,6 +1,7 @@
 import { db } from "../firebase";
 import { getDocs, collection } from "firebase/firestore";
 
+/** 데이터 가져오기 */
 export const fetchDataFromFirestore = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "villager"));
