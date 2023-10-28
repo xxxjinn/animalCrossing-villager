@@ -1,4 +1,5 @@
 import { Component } from "../core/component";
+import { addVillager } from "../store/memberStore";
 
 export default class AddVillager extends Component {
   /** 선택한 이미지 미리보기 */
@@ -12,9 +13,26 @@ export default class AddVillager extends Component {
       reader.onload = (e) => {
         const villagerImg = this.el.querySelector("#profile-img");
         villagerImg.src = e.target.result;
+        this.state.imageUrl = villagerImg.src;
       };
       reader.readAsDataURL(selectedFile);
     }
+  }
+
+  /** 입력한 값 가져오기 */
+  getVillagerInfo(fields) {
+    const values = {};
+
+    for (const field of fields) {
+      const value = document.querySelector(`.profile-info-${field}`).value;
+
+      if (!value) {
+        return null;
+      }
+      values[field] = value;
+    }
+    this.state.villagerInfo = values;
+    return values;
   }
 
   render() {
@@ -67,6 +85,31 @@ export default class AddVillager extends Component {
   setEvent() {
     this.addEvent("change", ".profile-left", (event) => {
       this.previewImg(event);
+    });
+
+    this.addEvent("click", ".add-btn", () => {
+      /** input value 받아오기 */
+      const fields = [
+        "name",
+        "engName",
+        "sex",
+        "birthday",
+        "personality",
+        "favoriteColor",
+        "speechHabit",
+      ];
+
+      const values = this.getVillagerInfo(fields);
+      if (values === null) {
+        alert("모든 정보를 입력해주세요!");
+        return;
+      }
+
+      /**데이터 업로드하기 */
+      if (!this.state.imageUrl) {
+        alert("이미지를 업로드해주세요!");
+      }
+      addVillager(this.state);
     });
   }
 }
