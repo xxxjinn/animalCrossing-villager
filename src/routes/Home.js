@@ -1,4 +1,4 @@
-import { fetchDataFromFirestore } from "../store/memberStore";
+import { fetchDataFromFirestore, deleteVillager } from "../store/memberStore";
 import { Component } from "../core/component";
 
 export default class Home extends Component {
@@ -6,6 +6,7 @@ export default class Home extends Component {
     super();
   }
 
+  /** 데이터 가져와서 villager item 생성 */
   renderVillagers(villagerData) {
     const villagersList = this.el.querySelector(".villagers-list");
 
@@ -32,6 +33,8 @@ export default class Home extends Component {
       `;
 
       villagersList.insertAdjacentHTML("beforeend", villagerHTML);
+
+      /** 성별에 따른 글자 색 변화 */
       const sexElement = villagersList.querySelector(
         ".villager:last-child .sex"
       );
@@ -46,8 +49,37 @@ export default class Home extends Component {
     });
   }
 
+  /** 주민 삭제 */
+  handleDeleteButtonClick(event) {
+    const target = event.target;
+    if (target.classList.contains("delete-button")) {
+      const villagerElement = target.closest(".villager");
+      if (villagerElement) {
+        const selectedVillagerData = this.state.find((data) => {
+          return (
+            data.name ===
+            villagerElement.querySelector(".villager-info-li p").textContent
+          );
+        });
+        let confirmDelete = confirm(
+          `정말 ${selectedVillagerData.name}을(를) 삭제하시겠습니까?`
+        );
+        if (confirmDelete) {
+          deleteVillager(selectedVillagerData)
+            .then(() => {
+              villagerElement.remove();
+            })
+            .catch((error) => {
+              console.error("주민 삭제 오류:", error);
+            });
+        }
+      }
+    }
+  }
+
   async componentDidMount() {
     const villagerData = await fetchDataFromFirestore();
+    this.state = villagerData;
     this.renderVillagers(villagerData);
   }
 
@@ -80,5 +112,11 @@ export default class Home extends Component {
         </div>
       </main>
     `;
+  }
+
+  setEvent() {
+    this.addEvent("click", ".villagers-list", (event) => {
+      this.handleDeleteButtonClick(event);
+    });
   }
 }
