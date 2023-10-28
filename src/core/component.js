@@ -7,7 +7,16 @@ export class Component {
     this.props = props;
     this.render();
     this.componentDidMount();
+    this.setEvent();
   }
   render() {}
   componentDidMount() {}
+  setEvent() {}
+
+  addEvent(eventType, selector, callback) {
+    const element = this.el.querySelector(selector);
+    element?.addEventListener(eventType, (event) => {
+      callback(event);
+    });
+  }
 }
