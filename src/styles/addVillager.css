@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 10%;
 
   padding: 1rem;
   margin: 1rem auto 0;
@@ -33,15 +34,16 @@
 }
 
 .profile-left {
-  width: 20rem;
-  min-width: 15rem;
+  width: 20%;
+  min-width: 5rem;
+
+  padding: 1rem;
+  margin: auto 0;
 }
 
 .profile-img {
   width: 100%;
-  max-height: 25rem;
-
-  margin: 1rem 0;
+  height: 100%;
 
   cursor: pointer;
 }
@@ -57,18 +59,12 @@
 }
 
 .profile-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 80%;
-  min-width: 16rem;
+  width: 35%;
+  min-width: 19rem;
 }
 
 .profile-ul {
   display: flex;
-
-  margin-top: 2rem;
 }
 
 .profile-info,
@@ -171,6 +167,10 @@
   .profile-left,
   .profile-right {
     padding: 1rem;
+  }
+
+  .profile-left {
+    width: 100%;
   }
 
   .profile-right {
