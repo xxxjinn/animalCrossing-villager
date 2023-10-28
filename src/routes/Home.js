@@ -7,11 +7,11 @@ export default class Home extends Component {
     const villagersList = this.el.querySelector(".villagers-list");
 
     villagerData.forEach((data) => {
-      const { name, favoriteColor, imageUrl, sex, birthday, personality } =
+      const { name, favoriteColor, imageUrl, sex, birthday, personality, id } =
         data;
 
       const villagerHTML = /* html */ ` 
-        <div class="villager">
+        <div class="villager" id=${id}>
           <ul class="villager-info-ul">
             <li class="villager-info-li-img">
               <img class="villager-img" src="${imageUrl}" />
@@ -52,10 +52,12 @@ export default class Home extends Component {
       const villagerElement = target.closest(".villager");
       const selectedVillagerId = villagerElement.getAttribute("id");
       const selectedVillagerData = this.state.find((data) => {
-        return data.id === selectedVillagerId;
+        if (data.id === selectedVillagerId) {
+          return data;
+        }
       });
       let confirmDelete = confirm(
-        `정말 ${selectedVillagerData.name}을(를) 삭제하시겠습니까?`
+        ` ${selectedVillagerData.name}을(를) 목록에서 삭제하시겠습니까?`
       );
       if (confirmDelete) {
         deleteVillager(selectedVillagerData)
