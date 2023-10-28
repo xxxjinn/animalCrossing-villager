@@ -1,6 +1,22 @@
 import { Component } from "../core/component";
 
 export default class AddVillager extends Component {
+  /** 선택한 이미지 미리보기 */
+  previewImg(event) {
+    const target = event.target;
+    const selectedFile = target.files[0];
+
+    if (selectedFile) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const villagerImg = this.el.querySelector("#profile-img");
+        villagerImg.src = e.target.result;
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+  }
+
   render() {
     this.el.innerHTML = /* html */ `
     <div class="profile-wrap">
@@ -38,14 +54,19 @@ export default class AddVillager extends Component {
               <li class="profile-info-input-li"><input type="text" placeholder="예) 3월19일" class="profile-info-birthday profile-info-input"></input></li>
               <li class="profile-info-input-li"><input type="text" class="profile-info-personality profile-info-input"></input></li>
               <li class="profile-info-input-li"><input type="text" class="profile-info-favoriteColor profile-info-input"></input></li>
-              <li class="profile-info-input-li"><input type="text" class="profile-info-speechHabit profile-info-input"></input></li>
-              
+              <li class="profile-info-input-li"><input type="text" class="profile-info-speechHabit profile-info-input"></input></li> 
             </ul>
           </ul>
         </div>
       </main>
       <button class="add-btn">등록하기</button>
     </div>
-        `;
+    `;
+  }
+
+  setEvent() {
+    this.addEvent("change", ".profile-left", (event) => {
+      this.previewImg(event);
+    });
   }
 }
