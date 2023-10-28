@@ -21,7 +21,7 @@ export default class AddVillager extends Component {
     this.el.innerHTML = /* html */ `
     <div class="profile-wrap">
       <div class="header-text">
-        <h1 class="profile-top-text">주민을 등록해보세요!</h1>
+        <h1 class="profile-top-text">새로운 주민을 등록해보세요!</h1>
       </div>
       <main class="profile-main">
         <div class="profile-left"> 
