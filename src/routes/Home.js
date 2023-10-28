@@ -50,25 +50,21 @@ export default class Home extends Component {
     const target = event.target;
     if (target.classList.contains("delete-button")) {
       const villagerElement = target.closest(".villager");
-      if (villagerElement) {
-        const selectedVillagerData = this.state.find((data) => {
-          return (
-            data.name ===
-            villagerElement.querySelector(".villager-info-li p").textContent
-          );
-        });
-        let confirmDelete = confirm(
-          `정말 ${selectedVillagerData.name}을(를) 삭제하시겠습니까?`
-        );
-        if (confirmDelete) {
-          deleteVillager(selectedVillagerData)
-            .then(() => {
-              villagerElement.remove();
-            })
-            .catch((error) => {
-              console.error("주민 삭제 오류:", error);
-            });
-        }
+      const selectedVillagerId = villagerElement.getAttribute("id");
+      const selectedVillagerData = this.state.find((data) => {
+        return data.id === selectedVillagerId;
+      });
+      let confirmDelete = confirm(
+        `정말 ${selectedVillagerData.name}을(를) 삭제하시겠습니까?`
+      );
+      if (confirmDelete) {
+        deleteVillager(selectedVillagerData)
+          .then(() => {
+            villagerElement.remove();
+          })
+          .catch((error) => {
+            console.error("주민 삭제 오류:", error);
+          });
       }
     }
   }
