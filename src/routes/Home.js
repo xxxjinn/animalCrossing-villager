@@ -2,10 +2,6 @@ import { fetchDataFromFirestore, deleteVillager } from "../store/memberStore";
 import { Component } from "../core/component";
 
 export default class Home extends Component {
-  constructor() {
-    super();
-  }
-
   /** 데이터 가져와서 villager item 생성 */
   renderVillagers(villagerData) {
     const villagersList = this.el.querySelector(".villagers-list");
