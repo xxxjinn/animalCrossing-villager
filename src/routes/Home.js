@@ -1,5 +1,6 @@
 import { fetchDataFromFirestore, deleteVillager } from "../store/memberStore";
 import { Component } from "../core/component";
+import { navigation } from "../core/router";
 
 export default class Home extends Component {
   /** 데이터 가져와서 villager item 생성 */
@@ -71,6 +72,16 @@ export default class Home extends Component {
     }
   }
 
+  /** 해당 주민 프로필로 이동 */
+  navigationProfile = (event) => {
+    const target = event.target;
+    if (target.classList.contains("villager-info-ul")) {
+      const villagerElement = target.closest(".villager");
+      const selectedVillagerId = villagerElement.getAttribute("id");
+      navigation(`/profile?id=${selectedVillagerId}`);
+    }
+  };
+
   async componentDidMount() {
     const villagerData = await fetchDataFromFirestore();
     this.state = villagerData;
@@ -111,6 +122,10 @@ export default class Home extends Component {
   setEvent() {
     this.addEvent("click", ".villagers-list", (event) => {
       this.handleDeleteButtonClick(event);
+    });
+
+    this.addEvent("click", ".villagers-list", (event) => {
+      this.navigationProfile(event);
     });
   }
 }

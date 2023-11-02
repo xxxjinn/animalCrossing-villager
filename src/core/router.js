@@ -1,5 +1,7 @@
+import { routes } from "../routes";
+
 /** router */
-function routeRender(routes) {
+function routeRender() {
   if (!location.hash) {
     history.replaceState(null, "", "/#/");
   }
@@ -25,4 +27,9 @@ export function createRouter(routes) {
     });
     routeRender(routes);
   };
+}
+
+export function navigation(url) {
+  window.history.pushState(null, null, `/#${url}`);
+  routeRender();
 }

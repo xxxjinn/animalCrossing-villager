@@ -4,9 +4,11 @@ import VillagerProfile from "./VillagerProfile";
 import AddVillager from "./AddVillager";
 import NotFound from "./NotFound";
 
-export default createRouter([
+export const routes = [
   { path: "#/", component: Home },
   { path: "#/profile", component: VillagerProfile },
   { path: "#/add", component: AddVillager },
   { path: ".*", component: NotFound },
-]);
+];
+
+export default createRouter(routes);
