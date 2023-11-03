@@ -37,29 +37,29 @@ export default class AddVillager extends Component {
 
   render() {
     this.el.innerHTML = /* html */ `
-    <div class="profile-wrap">
-      <div class="header-text">
+    <div class="add-profile-wrap">
+      <div class="add-header-text">
         <h1 class="profile-top-text">새로운 주민을 등록해보세요!</h1>
       </div>
-      <main class="profile-main">
-        <div class="profile-left"> 
+      <main class="add-profile-main">
+        <div class="add-profile-left"> 
           <label for="fileInput" class="custom-file-button"><img
-            class="profile-img"
-            id="profile-img"
+            class="add-profile-img"
+            id="add-profile-img"
             src="/images/previewVillager.png"
           /></label>
           <input type="file" id="fileInput" class="chooseImg" accept="image/*">
         </div>
-        <div class="profile-right">
-          <ul class="profile-ul">
-            <ul class="profile-info">
-              <li><p class="profile-info-li">이름:</p></li>
-              <li><p class="profile-info-li">영어 이름:</p></li>
-              <li><p class="profile-info-li">성별:</p></li>
-              <li><p class="profile-info-li">생일:</p></li>
-              <li><p class="profile-info-li">성격:</p></li>
-              <li><p class="profile-info-li">좋아하는 색:</p></li>
-              <li><p class="profile-info-li">말버릇:</p></li>
+        <div class="add-profile-right">
+          <ul class="add-profile-ul">
+            <ul class="add-profile-info">
+              <li><p class="add-profile-info-li">이름:</p></li>
+              <li><p class="add-profile-info-li">영어 이름:</p></li>
+              <li><p class="add-profile-info-li">성별:</p></li>
+              <li><p class="add-profile-info-li">생일:</p></li>
+              <li><p class="add-profile-info-li">성격:</p></li>
+              <li><p class="add-profile-info-li">좋아하는 색:</p></li>
+              <li><p class="add-profile-info-li">말버릇:</p></li>
             </ul>
             <ul class="profile-info-input-ul">
               <li class="profile-info-input-li"><input type="text" class="profile-info-name profile-info-input"></input></li>
