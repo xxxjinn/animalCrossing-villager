@@ -4,7 +4,7 @@
   "description": "모여봐요 동물의 숲에 등장하는 주민들의 사진과 정보를 관리하는 서비스입니다 :>",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel ./index.html",
+    "dev": "parcel ./index.html --no-cache",
     "build": "parcel ./index.html"
   },
   "repository": {
