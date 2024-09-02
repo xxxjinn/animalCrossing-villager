@@ -15,7 +15,5 @@ export default class App extends Component {
       const upIcon = new UpIcon().el;
       this.el.append(upIcon);
     }
-    console.log(window.location);
-    console.log(urlHash);
   }
 }
