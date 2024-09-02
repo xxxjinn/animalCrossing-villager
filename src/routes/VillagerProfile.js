@@ -43,16 +43,13 @@ export default class VillagerProfile extends Component {
     this.el.innerHTML = /* html */ `
           <div class="profile-wrap">
       <div class="header-text">
-        <h1 class="profile-top-text">주민 상세 프로필</h1>
+        <h1 class="profile-top-text">프로필</h1>
       </div>
       <main class="profile-main">
         <div class="profile-left">
           <img class="villager-profile-img" id="villager-profile-img" src="" />
-          <input type="file" class="image-upload" accept="image/*" />
         </div>
         <div class="profile-right">
-          <h2 class="profile-info-h2">주민 정보</h2>
-          <hr class="profile-info-hr" />
           <ul class="profile-info-ul">
             <ul class="profile-info">
               <li><p class="profile-info-li">이름:</p></li>
@@ -66,7 +63,6 @@ export default class VillagerProfile extends Component {
           </ul>
         </div>
       </main>
-      <button class="edit-btn">정보 수정</button>
     </div>
     `;
   }
