@@ -1,24 +1,24 @@
 .add-profile-wrap {
-  width: 70%;
-  height: 42rem;
+  width: 60%;
+  min-width: 45rem;
+  height: 34rem;
 
   background-color: rgba(252, 241, 224, 0.8);
 
   margin: 1rem auto;
 
-  border-radius: 3rem;
+  border-radius: 2rem;
   border: none;
 
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  gap: 2rem;
 }
 
-.add-header-text {
+.profile-top-text {
   color: var(--darkest-green);
-
-  margin-top: 3rem;
 }
 
 .add-profile-main {
@@ -26,24 +26,16 @@
   flex-direction: row;
   justify-content: center;
   gap: 10%;
-
-  padding: 1rem;
-  margin: 1rem auto 0;
-
-  width: 80%;
 }
 
 .add-profile-left {
-  width: 20%;
-  min-width: 5rem;
+  width: 13rem;
 
-  padding: 1rem;
   margin: auto 0;
 }
 
 .add-profile-img {
   width: 100%;
-  height: 100%;
 
   cursor: pointer;
 }
@@ -72,22 +64,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
 
   width: 100%;
-
-  margin: 1%;
 }
 
 .add-profile-info-li {
-  margin: 1rem;
-  margin-right: 2rem;
+  margin: 0.8rem;
 
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 800;
 }
 
 .profile-info-input-li {
-  margin: 0.6rem;
+  margin: 0.35rem;
 
   width: 100%;
 }
@@ -123,22 +113,21 @@
 }
 
 .add-btn {
-  width: 27%;
-  max-width: 10rem;
-  height: 9%;
+  width: 8rem;
+  height: 3rem;
 
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   border-style: none;
 
   color: var(--darkest-green);
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   font-weight: 600;
 
   background-color: var(--bright-green);
 
   cursor: pointer;
 
-  margin: 2rem auto;
+  margin: 0 auto;
 }
 
 .add-btn:hover {
@@ -152,16 +141,17 @@
 @media (max-width: 768px) {
   .add-profile-wrap {
     width: 90%;
+    min-width: 20rem;
     height: auto;
-  }
 
-  .profile-top-text {
-    font-size: 1.7rem;
+    padding: 3rem 0;
   }
 
   .add-profile-main {
     flex-direction: column;
     align-items: center;
+
+    gap: 0;
   }
 
   .add-profile-left,
@@ -173,30 +163,21 @@
     width: 100%;
   }
 
-  .add-profile-right {
-    width: 80%;
-  }
-
   .add-profile-img {
     width: 14rem;
   }
 
   .add-profile-info-li {
-    margin: 1.1rem;
+    margin: 1rem;
     margin-right: 2rem;
 
     text-align: center;
 
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: 600;
   }
 
-  .add-btn {
-    max-width: 8rem;
-    height: 3rem;
-
-    bottom: 1rem;
-
-    font-size: 1.3rem;
+  .profile-info-input-li {
+    margin: 0.45rem;
   }
 }

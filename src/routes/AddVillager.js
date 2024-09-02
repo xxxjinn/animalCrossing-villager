@@ -38,9 +38,7 @@ export default class AddVillager extends Component {
   render() {
     this.el.innerHTML = /* html */ `
     <div class="add-profile-wrap">
-      <div class="add-header-text">
-        <h1 class="profile-top-text">새로운 주민을 등록해보세요!</h1>
-      </div>
+        <h2 class="profile-top-text">새로운 주민을 등록해보세요!</h2>
       <main class="add-profile-main">
         <div class="add-profile-left"> 
           <label for="fileInput" class="custom-file-button"><img
