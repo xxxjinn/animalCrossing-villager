@@ -1,6 +1,7 @@
 import { db, storage } from "../firebase";
 import {
   getDocs,
+  getDoc,
   collection,
   doc,
   deleteDoc,
@@ -13,7 +14,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 
-/** 데이터 가져오기 */
+/** 전체 주민 데이터 가져오기 */
 export const fetchDataFromFirestore = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "villager"));
@@ -32,6 +33,31 @@ export const fetchDataFromFirestore = async () => {
       });
     });
 
+    return villagerData;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+/** 주민 한 명의 데이터만 가져오기 */
+export const fetchOneVillagerData = async (villagerId) => {
+  try {
+    const docRef = doc(db, "villager", villagerId);
+    const querySnapshot = await getDoc(docRef);
+    const villagerData = [];
+
+    const data = querySnapshot.data();
+    villagerData.push({
+      name: data.name,
+      id: data.engName,
+      engName: data.engName,
+      favoriteColor: data.favoriteColor,
+      imageUrl: data.imageUrl,
+      sex: data.sex,
+      birthday: data.birthday,
+      personality: data.personality,
+      speechHabit: data.speechHabit,
+    });
     return villagerData;
   } catch (error) {
     console.error(error);
