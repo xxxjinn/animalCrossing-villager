@@ -103,7 +103,7 @@ export const addVillager = async ({ imageUrl, villagerInfo }) => {
     await setDoc(villagerDocRef, { imageUrl: downloadURL }, { merge: true });
 
     alert(
-      `${villagerInfo.name}이 성공적으로 목록에 등록되었습니다! 메인 화면으로 이동합니다.`
+      `${villagerInfo.name}이(가) 성공적으로 목록에 등록되었습니다! 메인 화면으로 이동합니다.`
     );
     window.location.href = "/#";
   } catch (error) {
