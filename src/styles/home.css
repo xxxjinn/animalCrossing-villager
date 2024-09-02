@@ -4,7 +4,7 @@
 
   background-color: #fcf1e0;
 
-  border-radius: 3rem;
+  border-radius: 2rem;
 
   display: inline-block;
 
@@ -17,28 +17,25 @@
 
 .main-top {
   width: 20rem;
-
-  display: flex;
-  flex-direction: column;
 }
 
 .main-top-text {
   margin-bottom: 2.5rem;
 
   color: var(--middle-green);
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .add-button {
-  width: 85%;
-  height: 4rem;
+  width: 13rem;
+  height: 3rem;
 
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   border-style: none;
 
   color: var(--darkest-green);
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: bold;
 
   background-color: var(--bright-green);
 
@@ -55,7 +52,7 @@
 }
 
 .main-middle {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
 }
 
 .main-middle-header {
@@ -63,11 +60,7 @@
 }
 
 .main-middle-hr {
-  border: solid 0.15rem var(--darkest-green);
-
-  flex-grow: 1;
-
-  margin: 0 1rem;
+  border: solid 0.12rem var(--darkest-green);
 }
 
 .villagers-info {
@@ -83,7 +76,7 @@
 }
 
 .villagers-info-li {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
 
   margin: 0 1rem;
@@ -104,11 +97,11 @@
 
 .villager {
   width: 100%;
-  height: 20%;
+  height: 15%;
 
   margin: 3rem auto;
 
-  border-radius: 3rem;
+  border-radius: 1.5rem;
   border-style: none;
 
   background-color: #fdf6e8;
@@ -117,7 +110,9 @@
 
   color: var(--bright-green);
 
-  transition: background-color 0.4s, transform 1.9s;
+  transition:
+    background-color 0.4s,
+    transform 1.9s;
   transform-origin: center;
 
   display: flex;
@@ -143,8 +138,8 @@
 }
 
 .villager-info-li-img {
-  width: 8rem;
-  height: 10rem;
+  width: 6rem;
+  height: 8rem;
 
   padding: 1rem;
 
@@ -157,7 +152,7 @@
 }
 
 .villager-info-li {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -167,21 +162,21 @@
 }
 
 .delete-button {
-  width: 7rem;
-  height: 3rem;
+  width: 6rem;
+  height: 2.5rem;
 
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   border-style: none;
 
   color: var(--darkest-green);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.85rem;
 
   background-color: var(--bright-green);
 
   cursor: pointer;
 
-  margin-right: 4.5rem;
+  margin-right: 4rem;
   margin-bottom: 2rem;
 }
 
