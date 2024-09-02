@@ -1,0 +1,20 @@
+.upArrow-wrap {
+  float: right;
+  z-index: 1;
+
+  position: fixed;
+
+  cursor: pointer;
+
+  bottom: 0.625rem;
+  right: 1.25rem;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.4s;
+  }
+}
+
+.upArrow-wrap .upArrow-img {
+  width: 3rem;
+}
