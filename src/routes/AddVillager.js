@@ -106,7 +106,9 @@ export default class AddVillager extends Component {
       /**데이터 업로드하기 */
       if (!this.state.imageUrl) {
         alert("이미지를 업로드해주세요!");
+        return;
       }
+
       addVillager(this.state);
     });
   }
