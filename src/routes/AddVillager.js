@@ -7,7 +7,7 @@ export default class AddVillager extends Component {
     const target = event.target;
     const selectedFile = target.files[0];
 
-    if (selectedFile) {
+    if (selectedFile && selectedFile.type.startsWith("image/")) {
       const reader = new FileReader();
 
       reader.onload = (e) => {
@@ -16,6 +16,8 @@ export default class AddVillager extends Component {
         this.state.imageUrl = villagerImg.src;
       };
       reader.readAsDataURL(selectedFile);
+    } else {
+      alert("이미지 파일을 선택해주세요.");
     }
   }
 
@@ -42,8 +44,8 @@ export default class AddVillager extends Component {
       <main class="add-profile-main">
         <div class="add-profile-left"> 
           <label for="fileInput" class="custom-file-button"><img
-            class="add-profile-img"
-            id="add-profile-img"
+            class="profile-img"
+            id="profile-img"
             src="/images/previewVillager.png"
           /></label>
           <input type="file" id="fileInput" class="chooseImg" accept="image/*">
@@ -81,7 +83,7 @@ export default class AddVillager extends Component {
   }
 
   setEvent() {
-    this.addEvent("change", ".profile-left", (event) => {
+    this.addEvent("change", "#fileInput", (event) => {
       this.previewImg(event);
     });
 
