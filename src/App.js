@@ -11,9 +11,7 @@ export default class App extends Component {
 
     this.el.append(header, routerView);
 
-    if (urlHash === "#/") {
-      const upIcon = new UpIcon().el;
-      this.el.append(upIcon);
-    }
+    const upIcon = new UpIcon().el;
+    this.el.append(upIcon);
   }
 }
