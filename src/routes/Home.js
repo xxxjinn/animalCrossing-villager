@@ -3,6 +3,15 @@ import { Component } from "../core/component";
 import { navigation } from "../core/router";
 
 export default class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      villagers: [],
+      lastDoc: null,
+      isFetching: false,
+    };
+  }
+
   /** 데이터 가져와서 villager item 생성 */
   renderVillagers(villagerData) {
     const villagersList = this.el.querySelector(".villagers-list");
@@ -82,10 +91,52 @@ export default class Home extends Component {
     }
   };
 
+  /** 스크롤이 바닥에 닿았을 때 추가로 데이터 fetch해옴 */
+  loadMoreVillagers = async () => {
+    if (this.state.isFetching) return;
+
+    this.state.isFetching = true;
+
+    const { villagerData, lastVisible } = await fetchDataFromFirestore(
+      this.state.lastDoc,
+      4
+    );
+
+    if (villagerData.length > 0) {
+      this.renderVillagers(villagerData);
+      this.state.villagers = [...this.state.villagers, ...villagerData];
+      this.state.lastDoc = lastVisible;
+    }
+
+    this.state.isFetching = false;
+  };
+
+  /** intersection observer */
+  setUpIntersectionObserver() {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver(async (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.loadMoreVillagers();
+        }
+      });
+    }, options);
+
+    const sentinel = this.el.querySelector(".sentinel");
+    observer.observe(sentinel);
+  }
+
   async componentDidMount() {
-    const villagerData = await fetchDataFromFirestore();
-    this.state = villagerData;
+    const { villagerData, lastVisible } = await fetchDataFromFirestore();
+    this.state.villagers = villagerData;
+    this.state.lastDoc = lastVisible;
     this.renderVillagers(villagerData);
+    this.setUpIntersectionObserver();
   }
 
   render() {
@@ -113,6 +164,7 @@ export default class Home extends Component {
             </div>
             <div class="villagers-list">
             </div>
+            <div class="sentinel"></div>
           </div>
         </div>
       </main>
