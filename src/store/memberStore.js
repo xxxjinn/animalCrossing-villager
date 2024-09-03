@@ -6,6 +6,10 @@ import {
   doc,
   deleteDoc,
   setDoc,
+  query,
+  orderBy,
+  startAfter,
+  limit,
 } from "firebase/firestore";
 import {
   ref,
@@ -15,9 +19,22 @@ import {
 } from "firebase/storage";
 
 /** 전체 주민 데이터 가져오기 */
-export const fetchDataFromFirestore = async () => {
+export const fetchDataFromFirestore = async (
+  lastDoc = null,
+  limitNumber = 4
+) => {
   try {
-    const querySnapshot = await getDocs(collection(db, "villager"));
+    const villagerCollection = collection(db, "villager");
+    const villagerQuery = lastDoc
+      ? query(
+          villagerCollection,
+          orderBy("engName"),
+          startAfter(lastDoc),
+          limit(limitNumber)
+        )
+      : query(villagerCollection, orderBy("engName"), limit(limitNumber));
+
+    const querySnapshot = await getDocs(villagerQuery);
     const villagerData = [];
 
     querySnapshot.forEach((doc) => {
@@ -33,7 +50,9 @@ export const fetchDataFromFirestore = async () => {
       });
     });
 
-    return villagerData;
+    const lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+
+    return { villagerData, lastVisible };
   } catch (error) {
     console.error(error);
   }
