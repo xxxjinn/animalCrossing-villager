@@ -24,6 +24,7 @@
     "stream-browserify": "^3.0.0"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001655",
     "dotenv": "^16.3.1",
     "firebase": "^10.5.0"
   }
